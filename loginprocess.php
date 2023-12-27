@@ -8,7 +8,6 @@ $username = 'admin';
 $password = 'nodejs123';
 $database = 'php';
 
-
 $conn = new mysqli($host, $username, $password, $database);
 
 if ($conn->connect_error) {
@@ -29,7 +28,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Verify password
         if (password_verify($password, $user['password'])) {
-            echo "Login successful";
+            // Redirect to the success page
+            echo '<script>
+                    window.location.href = "success.php";
+                  </script>';
         } else {
             echo "Incorrect password";
         }

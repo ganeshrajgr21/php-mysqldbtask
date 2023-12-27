@@ -8,7 +8,6 @@ $username = 'admin';
 $password = 'nodejs123';
 $database = 'php';
 
-
 $conn = new mysqli($host, $username, $password, $database);
 
 if ($conn->connect_error) {
@@ -24,7 +23,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Registration successful";
+        // Redirect to the success page
+        echo '<script>
+                window.location.href = "registration_success.php";
+              </script>';
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
