@@ -19,8 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-    // Insert user into the database
-    $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
+    // Insert user into the "data" table
+    $sql = "INSERT INTO data (username, password) VALUES ('$username', '$password')";
 
     if ($conn->query($sql) === TRUE) {
         // Redirect to the success page
@@ -34,4 +34,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 $conn->close();
 ?>
-
