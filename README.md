@@ -109,3 +109,20 @@ The web application experiences fluctuations in user traffic, leading to perform
 
 ---
 
+**STEP:4 - DEPLOYING THE APPLICATION ON APACHE SERVER:**
+
+- Move the application codes to the `/var/www/html` location:
+    ```bash
+    mv * /var/www/html/
+    ```
+
+- Check the output by pasting the public IP address of the instance in a web browser:
+    ```
+    http://<public_ip>:80
+    ```
+
+- Ensure that the application is accessible by navigating to the provided public IP address on port 80.
+
+---
+
+## APPLICATION OUTPUT:
