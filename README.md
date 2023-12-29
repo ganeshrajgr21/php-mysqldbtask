@@ -16,10 +16,13 @@ The web application experiences fluctuations in user traffic, leading to perform
 2. Connect to the EC2 instance and deploy the application with Apache.
 3. Verify the application output to ensure proper functionality.
 
+---
+
+
 **SOLUTION:**
 **PRE-REQUIREMENTS:**
-- Cloud           : AWS
-- Server          : EC2
-- Database      : RDS MySQL
+- Cloud           : **AWS**
+- Server          : **EC2**
+- Database        : **RDS MySQL**
 
 **GitHub repository:** [https://github.com/Ravivarman16/php-application.git](https://github.com/Ravivarman16/php-application.git)
