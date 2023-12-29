@@ -27,10 +27,12 @@ The web application experiences fluctuations in user traffic, leading to perform
 
 **GitHub repository:** [https://github.com/Ravivarman16/php-application.git](https://github.com/Ravivarman16/php-application.git)
 
+---
+
 
 ### **STEPS TO IMPLEMENT:**
 
-### **STEP 1 - CREATING AN AWS MYSQL DATABASE AND CREATING A TABLE:**
+**STEP 1 - CREATING AN AWS MYSQL DATABASE AND CREATING A TABLE:**
 
 - **Database Name:** php
   
