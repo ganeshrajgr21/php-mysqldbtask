@@ -32,7 +32,7 @@ The web application experiences fluctuations in user traffic, leading to perform
 
 ### **STEPS TO IMPLEMENT:**
 
-**STEP 1 - CREATING AN AWS MYSQL DATABASE AND CREATING A TABLE:**
+**STEP:1 - CREATING AN AWS MYSQL DATABASE AND CREATING A TABLE:**
 
 - **Database Name:** php
   
@@ -44,3 +44,32 @@ After creating a database, connect it with the command either on EC2 instance or
 mysql -u admin -p <databasename> -h <database endpoint>
 
 - After connecting to the database, execute the SQL query named table.sql which is provided in the above repository.
+
+---
+
+**STEP:2 - CREATING AN EC2 INSTANCE AND INSTALLING REQUIRED PACKAGES & SOFTWARES:**
+
+- After launching an instance, connect it with **Instance Connect.**
+
+- Clone the GitHub repository:
+    ```bash
+    git clone https://github.com/Ravivarman16/php-application.git 
+    cd php-application
+    ```
+
+- Execute the `package.sh` script by changing its file permission.
+    ```bash
+    chmod +x package.sh
+    ./package.sh
+    ```
+
+- Check the versions of the following packages using the command:
+    ```bash
+    apache --version
+    mysql --version
+    php --version
+    ```
+
+**Note:** Ensure security groups are configured accordingly for database connection.
+
+---
