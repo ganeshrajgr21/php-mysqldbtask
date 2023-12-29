@@ -66,7 +66,7 @@ The web application experiences fluctuations in user traffic, leading to perform
 
 - Check the versions of the following packages using the command:
     ```bash
-    apache --version
+    apache2 --version
     mysql --version
     php --version
     ```
