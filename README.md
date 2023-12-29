@@ -74,3 +74,38 @@ The web application experiences fluctuations in user traffic, leading to perform
 **Note:** Ensure security groups are configured accordingly for database connection.
 
 ---
+
+**STEP:3 - ALTERING register.php AND loginprocess.php FILES BY INSERTING DATABASE INSTRUCTIONS:**
+
+- Open `register.php` using the vi editor:
+    ```bash
+    vi register.php
+    ```
+
+- Insert the following database instructions:
+    ```php
+    $host = 'database endpoint';
+    $username = 'database_username';
+    $password = 'database password';
+    $database = 'database name';
+    ```
+
+- Save and exit the file.
+
+- Open `loginprocess.php` using the vi editor:
+    ```bash
+    vi loginprocess.php
+    ```
+
+- Insert the same database instructions:
+    ```php
+    $host = 'database endpoint';
+    $username = 'database_username';
+    $password = 'database password';
+    $database = 'database name';
+    ```
+
+- Save and exit the file.
+
+---
+
