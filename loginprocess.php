@@ -5,8 +5,8 @@ ini_set('display_errors', '1');
 // Establish a database connection (replace these credentials with your own)
 $host = 'php-application.chttjdyzo3c7.us-east-2.rds.amazonaws.com';
 $username = 'admin';
-$password = 'intel123';
-$database = 'intel';
+$password = 'phpapplication123';
+$database = 'php';
 
 $conn = new mysqli($host, $username, $password, $database);
 
