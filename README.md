@@ -39,9 +39,10 @@ The web application experiences fluctuations in user traffic, leading to perform
 - **Database Password:** phpapplication123
 - **Table Name:** data
 
-After creating a database, connect it with the command either on EC2 instance or on MySQL Workbench:
-```bash
-mysql -u admin -p <databasename> -h <database endpoint>
+- After creating a database, connect it with the command either on EC2 instance or on MySQL Workbench:
+    ```bash
+    mysql -u admin -p <databasename> -h <database endpoint>
+    ```
 
 - After connecting to the database, execute the SQL query named table.sql which is provided in the above repository.
 
