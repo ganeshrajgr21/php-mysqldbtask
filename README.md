@@ -126,3 +126,44 @@ The web application experiences fluctuations in user traffic, leading to perform
 ---
 
 ## APPLICATION OUTPUT:
+
+![image](https://github.com/Ravivarman16/php-application/assets/129171351/9dc4aa58-93a0-45b1-ab27-96e79cee228e)
+
+
+![image](https://github.com/Ravivarman16/php-application/assets/129171351/6ce6ddbb-b19b-42fe-a7ba-c41155deed27)
+
+
+![image](https://github.com/Ravivarman16/php-application/assets/129171351/f89415f4-4643-4cb2-847e-0183484dd666)
+
+
+![image](https://github.com/Ravivarman16/php-application/assets/129171351/d6e302f3-091f-4b8e-9695-ba8988fdc9ac)
+
+
+![image](https://github.com/Ravivarman16/php-application/assets/129171351/bcc69638-9153-433f-b269-fce5d849608c)
+
+
+---
+
+## BENEFITS OF DOING ABOVE TASK:
+
+- **Scalability with EC2:**
+  - Horizontally scale the presentation layer using Amazon EC2 instances to handle varying user loads.
+
+- **Application Logic with Apache Server:**
+  - Leverage the Apache server for application logic, ensuring efficient processing of user requests.
+
+- **Reliable Database Storage with MySQL RDS:**
+  - Ensure high availability and data integrity using MySQL RDS for efficient and secure database storage.
+
+- **Resource Optimization:**
+  - Efficiently manage resources with a dedicated architecture for presentation, application, and database layers.
+
+- **Cost-Effective Solution:**
+  - Pay only for the utilized resources, optimizing costs based on actual demand.
+
+---
+
+### ALL THE STEPS AND SOLUTION HAVE BEEN UPLOADED IN THIS PDF FILE:
+
+[Efficient Three-Tier Application Deployment on AWS with EC2 and RDS.pdf](https://github.com/Ravivarman16/php-application/files/13792065/Efficient.Three-Tier.Application.Deployment.on.AWS.with.EC2.and.RDS.pdf)
+
