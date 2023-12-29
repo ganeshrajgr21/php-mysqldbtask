@@ -1,12 +1,12 @@
-**EFFICIENT THREE-TIER APPLICATION DEPLOYMENT ON AWS WITH EC2 AND RDS**
+# **EFFICIENT THREE-TIER APPLICATION DEPLOYMENT ON AWS WITH EC2 AND RDS**
 
-**PROBLEM STATEMENT:**
+## **PROBLEM STATEMENT:**
 The current infrastructure faces challenges handling increased user traffic, impacting overall performance. Deploying a three-tier architecture on AWS is essential for optimizing scalability, reliability, and resource utilization. The objective is to enhance the user experience by leveraging EC2 for presentation, Apache server for application logic, and MySQL RDS for database storage.
 
-**USE CASE - SCENARIO:**
+## **USE CASE - SCENARIO:**
 The web application experiences fluctuations in user traffic, leading to performance degradation. The deployment of a three-tier architecture on AWS involves utilizing Amazon EC2 instances for the presentation layer, an Apache server for application logic, and MySQL RDS for efficient and secure database storage. This approach ensures scalability and effective data management tailored to the specific technology stack without incorporating S3 or Lambda.
 
-**TASKS TO BE PERFORMED:**
+## **TASKS TO BE PERFORMED:**
 1. Create a MySQL database on Amazon RDS:
    - Database Name: php
    - Database Password: phpapplication123
@@ -19,10 +19,26 @@ The web application experiences fluctuations in user traffic, leading to perform
 ---
 
 
-**SOLUTION:**
-**PRE-REQUIREMENTS:**
+## **SOLUTION:**
+### **PRE-REQUIREMENTS:**
 - Cloud           : **AWS**
 - Server          : **EC2**
 - Database        : **RDS MySQL**
 
 **GitHub repository:** [https://github.com/Ravivarman16/php-application.git](https://github.com/Ravivarman16/php-application.git)
+
+
+### **STEPS TO IMPLEMENT:**
+
+### **STEP 1 - CREATING AN AWS MYSQL DATABASE AND CREATING A TABLE:**
+
+- **Database Name:** php
+  
+- **Database Password:** phpapplication123
+- **Table Name:** data
+
+After creating a database, connect it with the command either on EC2 instance or on MySQL Workbench:
+```bash
+mysql -u admin -p <databasename> -h <database endpoint>
+
+- After connecting to the database, execute the SQL query named table.sql which is provided in the above repository.
