@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/ganeshrajgr21/php-mysqldbtask.gitt'
+                git 'https://github.com/ganeshrajgr21/php-mysqldbtask.git'
             }
         }
 
