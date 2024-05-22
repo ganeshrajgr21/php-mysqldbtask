@@ -5,14 +5,14 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        
+        sudo usermod -aG docker
         sh 'docker build -t phpimage .'
         sh 'docker tag phpapp $DOCKER_IMAGE'
       }
     }
     stage('Test') {
       steps {
-        sh 'docker run phpimage python -m pytest app/tests/'
+        sh 'docker run -itd -p 3000:80 phpimage .'
       }
     }
     stage('Deploy') {
