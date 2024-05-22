@@ -28,7 +28,7 @@ pipeline {
 
 post{
       always{
-            sh 'docker rm -f mypycont'
+            sh 'docker rm -f phpcont'
             sh 'docker run --name phpcont -d -p 3000:80 phpimage'
             catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
             mail  to: "ganeshrajgr21@gmail.com",
