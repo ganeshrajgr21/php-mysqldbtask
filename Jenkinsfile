@@ -5,7 +5,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sudo dockerd
+        
         sh 'docker build -t phpimage .'
         sh 'docker tag phpapp $DOCKER_IMAGE'
       }
