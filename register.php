@@ -3,10 +3,10 @@ error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
 // Establish a database connection (replace these credentials with your own)
-$host = 'php-application.chttjdyzo3c7.us-east-2.rds.amazonaws.com';
+$host = 'dbsql.cx2k624mkdt9.us-east-1.rds.amazonaws.com';
 $username = 'admin';
-$password = 'phpapplication123';
-$database = 'php';
+$password = 'Ganesh2198';
+$database = 'dbsql';
 
 $conn = new mysqli($host, $username, $password, $database);
 
