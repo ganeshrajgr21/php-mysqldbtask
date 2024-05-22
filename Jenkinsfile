@@ -36,7 +36,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    sshagent('C:\Users\HP\.ssh\n.virginiapemkey.pem') {
+                    sshagent('C:/Users/HP/ssh/n.virginiapemkey.pem') {
                         sh """
                         ssh -o StrictHostKeyChecking=no $DEPLOY_USER@$DEPLOY_SERVER << EOF
                         docker pull $phpimage
