@@ -6,8 +6,6 @@ pipeline {
     stage('Build') {
       steps {
         sudo dockerd
-        sudo service --status-all 
-        sudo service docker start
         sh 'docker build -t phpimage .'
         sh 'docker tag phpapp $DOCKER_IMAGE'
       }
