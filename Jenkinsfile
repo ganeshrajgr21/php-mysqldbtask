@@ -1,9 +1,11 @@
+
 pipeline {
   agent any
 
   stages {
     stage('Build') {
       steps {
+        chmod +x 777 
         sh 'docker build -t phpimage .'
         sh 'docker tag phpapp $DOCKER_IMAGE'
       }
