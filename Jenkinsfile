@@ -3,6 +3,7 @@ pipeline {
 
   environment {
     DOCKER_IMAGE = 'ganeshraj21/phpapp:latest'
+    DOCKER_REGISTRY_CREDS = 'docker-hub-credentials'
   }
 
   stages {
