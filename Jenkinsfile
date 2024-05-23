@@ -3,7 +3,7 @@ pipeline {
 
   environment {
     DOCKER_IMAGE = 'ganeshraj21/phpapp:latest'
-    DOCKER_REGISTRY_CREDS = ID ('DOCKER_REGISTRY_CREDS')
+    DOCKER_REGISTRY_CREDS = ('DOCKER_REGISTRY_CREDS')
   }
 
   stages {
