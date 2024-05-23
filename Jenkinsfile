@@ -5,7 +5,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sudo dockerd
+        sudo usermod -aG docker jenkins
+        sudo chmod 777 /var/run/docker.sock
         sh 'docker build -t -f phpimage .'
         sh 'docker tag phpapp $DOCKER_IMAGE'
       }
