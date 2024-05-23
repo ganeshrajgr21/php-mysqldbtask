@@ -14,7 +14,7 @@ pipeline {
     }
     stage('Test') {
       steps {
-        sh 'docker run -d -p 3000:80 --name phpcont phpimage'
+        sh 'docker run -d -p 3000:80 --name phpct1 phpimage'
       }
     }
     stage('Deploy') {
