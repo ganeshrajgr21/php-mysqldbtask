@@ -6,12 +6,10 @@ pipeline {
     stage('Build') {
       steps {
         sudo usermod -aG docker jenkins
-        sudo chmod 666 /var/run/docker.sock
         sh 'docker build -t -f phpimage .'
         sh 'docker tag phpapp $DOCKER_IMAGE'
       }
     }
-  }
     stage('Test') {
       steps {
         sh 'docker run -itd -p 3000:80 phpimage .'
@@ -25,9 +23,6 @@ pipeline {
         }
       }
     }
-    
-  }
-
 post{
       always{
             sh 'docker rm -f phpcont'
@@ -39,9 +34,9 @@ post{
                 
                 
         }
-}
+    }
 
-}
+  }
 }
 
              
