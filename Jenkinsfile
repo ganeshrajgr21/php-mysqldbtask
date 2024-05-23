@@ -14,7 +14,6 @@ pipeline {
     }
     stage('Test') {
       steps {
-        sudo docker stop 20b1
         sh 'docker run -itd -p 3000:80 --name phpct2 phpimage'
       }
     }
