@@ -14,7 +14,7 @@ pipeline {
     }
     stage('Test') {
       steps {
-        sh 'docker run -itd -p 3000:80 --name phpct2 phpimage'
+        sh 'docker run -itd -p 3000:80 --name phpco1 phpimage'
       }
     }
     stage('Deploy') {
@@ -30,8 +30,8 @@ pipeline {
   post {
     always {
       catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-        sh 'docker rm -f phpcont || true'
-        sh 'docker run --name phpct2 -d -p 3000:80 phpimage || true'
+        sh 'docker rm -f phpco1 || true'
+        sh 'docker run --name phpco1 -d -p 3000:80 phpimage || true'
         mail to: "ganeshrajgr21@gmail.com",
              subject: "Notification mail from Jenkins",
              body: "CI/CD pipeline completed successfully.\n\nCheck the application."
