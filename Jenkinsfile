@@ -1,56 +1,41 @@
-
 pipeline {
   agent any
+
+  environment {
+    DOCKER_IMAGE = 'ganeshraj21/phpapp:latest'
+  }
 
   stages {
     stage('Build') {
       steps {
-        sudo usermod -aG docker jenkins
-        sh 'docker build -t -f phpimage .'
-        sh 'docker tag phpapp $DOCKER_IMAGE'
-           }
+        sh 'docker build -t phpimage .'
+        sh 'docker tag phpimage $DOCKER_IMAGE'
       }
     }
     stage('Test') {
       steps {
-        sh 'docker run -itd -p 3000:80 phpimage .'
+        sh 'docker run -d -p 3000:80 --name phpcont phpimage'
       }
     }
     stage('Deploy') {
       steps {
         withCredentials([usernamePassword(credentialsId: "${DOCKER_REGISTRY_CREDS}", passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
-          sh "echo \$DOCKER_PASSWORD | docker login -u \$DOCKER_USERNAME --password-stdin docker.io"
+          sh 'echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin'
           sh 'docker push $DOCKER_IMAGE'
         }
       }
     }
-post{
-      always{
-            sh 'docker rm -f phpcont'
-            sh 'docker run --name phpcont -d -p 3000:80 phpimage'
-            catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-            mail  to: "ganeshrajgr21@gmail.com",
-                  subject: "Notification mail from Jenkins",
-                  body: "CI/CD pipeline completed successfully.\n\nCheck the application"
-                
-                
-        }
+  }
+
+  post {
+    always {
+      catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+        sh 'docker rm -f phpcont || true'
+        sh 'docker run --name phpcont -d -p 3000:80 phpimage || true'
+        mail to: "ganeshrajgr21@gmail.com",
+             subject: "Notification mail from Jenkins",
+             body: "CI/CD pipeline completed successfully.\n\nCheck the application."
+      }
     }
   }
 }
-
-             
-              
-  
-
-                 
-    
-  
-    
-
-  
-
-
-
-
-             
