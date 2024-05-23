@@ -3,7 +3,7 @@ pipeline {
 
   environment {
     DOCKER_IMAGE = 'ganeshraj21/phpapp:latest'
-    DOCKER_REGISTRY_CREDS = ('dckr_pat_84IhoctIWh5q5Hu1KvGb6OnVf9M')
+    DOCKER_REGISTRY_CREDS = ID ('DOCKER_REGISTRY_CREDS')
   }
 
   stages {
@@ -20,7 +20,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        withCredentials([usernamePassword(credentialsId: "${DOCKER_REGISTRY_CREDS}", passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
+        withCredentials([usernamePassword(credentialsId: "DOCKER_REGISTRY_CREDS", passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
           sh 'echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin'
           sh 'docker push $DOCKER_IMAGE'
         }
