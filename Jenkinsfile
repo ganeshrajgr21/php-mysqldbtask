@@ -8,6 +8,7 @@ pipeline {
         sudo usermod -aG docker jenkins
         sh 'docker build -t -f phpimage .'
         sh 'docker tag phpapp $DOCKER_IMAGE'
+           }
       }
     }
     stage('Test') {
@@ -35,7 +36,6 @@ post{
                 
         }
     }
-
   }
 }
 
